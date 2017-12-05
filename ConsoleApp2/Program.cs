@@ -23,7 +23,6 @@ namespace ConsoleApp2
                 Console.WriteLine("Tore!\nNüüd tehke endale parool: ");
                 user1.Psw = Convert.ToString(Console.ReadLine());
                 user1.LoggedIn();
-
             }
 
             Console.ReadLine();

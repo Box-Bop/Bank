@@ -16,11 +16,11 @@ namespace ConsoleApp2
 
         public void LoggedIn()
         {
-            File.Create(filePath + UserName + ".txt");
-            using (StreamWriter sw = File.CreateText(Path.Combine(filePath + UserName + ".txt")))
+        File.Create(filePath + UserName + ".txt");
+            using (var sw = File.Open((filePath + UserName + ".txt"), FileMode.Open))
             {
-                sw.WriteLine(Psw);
+                File.AppendText(Psw);
             }
-        }
+        } 
     }
 }
