@@ -14,10 +14,10 @@ namespace ConsoleApp2
         public string UserName { get; set; }
         public string filePath = Directory.GetCurrentDirectory();
 
-        public void LoggedIn()
+        public void Register()
         {
 
-            string fullPath = filePath + "\\" + UserName;
+            string fullPath = filePath + "\\" + UserName + ".txt";
             File.Create(filePath + UserName + ".txt");
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(fullPath, true))

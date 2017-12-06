@@ -21,14 +21,23 @@ namespace ConsoleApp2
                 var user1 = new User();
                 user1.UserName = Console.ReadLine();
 
-                Console.WriteLine("Tore!\nNüüd tehke endale parool: ");
+                Console.WriteLine("Nüüd tehke endale parool: ");
                 user1.Psw = Convert.ToInt16(Console.ReadLine());
-
+                Console.Clear();
                 user1.Balance = 100;
 
-                user1.LoggedIn();
+                user1.Register();
+                Console.WriteLine("Olete loonud endale konto!\n");
             }
 
+            var login1 = new LogIn();
+            Console.WriteLine("Palun sisestage enda nimi: ");
+            login1.LogName = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Palun sisestage pass: ");
+            login1.LogPsw = Convert.ToInt16(Console.ReadLine());
+            Console.Clear();
+            login1.Login();
+         
             Console.ReadLine();
         }
     }
