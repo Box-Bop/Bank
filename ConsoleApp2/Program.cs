@@ -20,8 +20,12 @@ namespace ConsoleApp2
                 Console.WriteLine("Mis on teie nimi?");
                 var user1 = new User();
                 user1.UserName = Console.ReadLine();
+
                 Console.WriteLine("Tore!\nNüüd tehke endale parool: ");
-                user1.Psw = Convert.ToString(Console.ReadLine());
+                user1.Psw = Convert.ToInt16(Console.ReadLine());
+
+                user1.Balance = 100;
+
                 user1.LoggedIn();
             }
 
