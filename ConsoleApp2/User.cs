@@ -25,7 +25,6 @@ namespace ConsoleApp2
                 {
                     file.WriteLine(Psw);
                     file.WriteLine(Balance);
-                    Decision = false;
                 }
         } 
     }

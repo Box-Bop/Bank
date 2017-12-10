@@ -27,17 +27,18 @@ namespace ConsoleApp2
                     bool decisionLoop = true;
                     while (decisionLoop == true)
                     {
-                        Console.WriteLine("Mis te soovite teha?\n\nMuuta oma konta summa (1)\nLogida välja (2)");
+                        Console.WriteLine("Mis te soovite teha?\n\nRaha välja võtta (1)\nLogida välja (2)");
                         string answer = Console.ReadLine();
                         if (answer == "2")
                         {
                             Console.WriteLine("Olete välja logitud!");
                             decisionLoop = false;
                             Console.ReadLine();
+                            Environment.Exit(0);
                         }
                         if (answer == "1")
                         {
-                            Console.WriteLine("Sisestage enda konto uue raha summa: ");
+                            Console.WriteLine("Sisestage summa, mis soovite väja võtta: ");
                             string newmon = Console.ReadLine();
 
                             string[] alllines = File.ReadAllLines(fullPath);
