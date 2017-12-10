@@ -39,21 +39,33 @@ namespace ConsoleApp2
                         if (answer == "1")
                         {
                             Console.WriteLine("Sisestage summa, mis soovite väja võtta: ");
-                            string newmon = Console.ReadLine();
+                            int withdraw = Convert.ToInt16(Console.ReadLine());
 
                             string[] alllines = File.ReadAllLines(fullPath);
-                            alllines[2 - 1] = newmon;
+                            int leftover = Convert.ToInt16(alllines[2 - 1]) - withdraw;
+                            alllines[2 - 1] = Convert.ToString(leftover);
                             File.WriteAllLines(fullPath, alllines);
                             Console.Clear();
-                            Console.WriteLine("Olete muutnud enda konto summma " + newmon + "'ks euroks!\n\nLoggime sind välja.\n\nKohtume uuesti!");
+                            Console.WriteLine("Olete välja võtnud oma kontost: " + withdraw + " euri.\nTeie kontos on alles: " + leftover + " euri.");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
-                        if (answer != "1" || answer != "2")
+                        if (answer != "1" && answer != "2")
                         {
-                            Console.WriteLine(answer + " pole valikus, palun proovige uuesti.");
+                            Console.Clear();
+                            Console.WriteLine(answer + " pole valikus, palun proovige uuesti.\n");
                         }
                     }
 
                 }
+                else
+                {
+                    Console.WriteLine("Vale parool\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ei leidnud sellist konto omaniku\n");
             }
         }
     }
