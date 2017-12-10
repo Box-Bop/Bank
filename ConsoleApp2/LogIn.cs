@@ -24,24 +24,34 @@ namespace ConsoleApp2
                     string money = File.ReadLines(fullPath).Skip(1).Take(1).First();
                     Console.WriteLine("Teie kontos on: " + money + " euri.");
 
-                    Console.WriteLine("Mis te soovite teha?\n\nMuuta oma konta summa (1)\nLogida välja (2)");
-                    string answer = Console.ReadLine();
-                    if (answer == "2")
+                    bool decisionLoop = true;
+                    while (decisionLoop == true)
                     {
-                        Console.WriteLine("Olete välja logitud!");
-                        Console.ReadLine();
-                    }
-                    if (answer == "1")
-                    {
-                        Console.WriteLine("Sisestage enda konto uue raha summa: ");
-                        string newmon = Console.ReadLine();
+                        Console.WriteLine("Mis te soovite teha?\n\nMuuta oma konta summa (1)\nLogida välja (2)");
+                        string answer = Console.ReadLine();
+                        if (answer == "2")
+                        {
+                            Console.WriteLine("Olete välja logitud!");
+                            decisionLoop = false;
+                            Console.ReadLine();
+                        }
+                        if (answer == "1")
+                        {
+                            Console.WriteLine("Sisestage enda konto uue raha summa: ");
+                            string newmon = Console.ReadLine();
 
-                        string[] alllines = File.ReadAllLines(fullPath);
-                        alllines[2 - 1] = newmon;
-                        File.WriteAllLines(fullPath, alllines);
-                        Console.Clear();
-                        Console.WriteLine("Olete muutnud enda konto summma " + newmon + "'ks euroks!\n\nLoggime sind välja.\n\nKohtume uuesti!");
+                            string[] alllines = File.ReadAllLines(fullPath);
+                            alllines[2 - 1] = newmon;
+                            File.WriteAllLines(fullPath, alllines);
+                            Console.Clear();
+                            Console.WriteLine("Olete muutnud enda konto summma " + newmon + "'ks euroks!\n\nLoggime sind välja.\n\nKohtume uuesti!");
+                        }
+                        if (answer != "1" || answer != "2")
+                        {
+                            Console.WriteLine(answer + " pole valikus, palun proovige uuesti.");
+                        }
                     }
+
                 }
             }
         }

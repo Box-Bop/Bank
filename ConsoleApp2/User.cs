@@ -12,6 +12,7 @@ namespace ConsoleApp2
         public int Psw { get; set; }
         public int Balance { get; set; }
         public string UserName { get; set; }
+        public bool Decision { get; set; }
         public string filePath = Directory.GetCurrentDirectory();
 
         public void Register()
@@ -24,6 +25,7 @@ namespace ConsoleApp2
                 {
                     file.WriteLine(Psw);
                     file.WriteLine(Balance);
+                    Decision = false;
                 }
         } 
     }
