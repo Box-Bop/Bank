@@ -18,20 +18,12 @@ namespace ConsoleApp2
                 Console.WriteLine("Tere!\nMis te soovite teha?");
                 Console.WriteLine("\nLuua uue konto (1)\nLogida sisse (2)");
                 string decision = Console.ReadLine();
-                int one = 1;
-                if (decision == "1")
-                {
-                    one = 1;
-                }
-                if (decision == "2")
-                {
-                    one = 2;
-                }
+
                 if (decision != "1" && decision != "2")
                 {
                     Console.WriteLine("Pole selline valik");
                 }
-                if (one == 1)
+                if (decision == "1")
                 {
                     Console.Clear();
                     Console.WriteLine("---REGISTER---\n\n");
@@ -48,7 +40,7 @@ namespace ConsoleApp2
                     Console.WriteLine("Olete loonud endale konto!\n");
                 }
 
-                if (one == 2)
+                if (decision == "2")
                 {
                     Console.Clear();
                     Console.WriteLine("---LOGIN---\n\n");
